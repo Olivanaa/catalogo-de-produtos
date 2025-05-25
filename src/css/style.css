@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unica+One&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Zilla Slab', serif;
+  background-color: #fefefe;
+  color: #333;
+  line-height: 1.6;
+}
+.container {
+  padding: 0 40px;
+}
+
+header {
+  background-color: #fff0f0;
+  padding: 20px 0;
+  border-bottom: 1px solid #ffd5d5;
+  margin-bottom:25px;
+}
+
+.nav ul{
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  list-style: none;
+  font-size: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #f87bc8;
+}
+
+.titulo {
+  font-family: "Unica One", sans-serif;
+  letter-spacing: 10px;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 50px;
+  color: #222;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 25px;
+  margin-left: 10px;
+}
+
+form label {
+  font-weight: 600;
+  margin-right: 2px;
+}
+
+form select, form input[type="checkbox"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+form button {
+  background-color: #ffdae8;
+  color: #ca8ca4;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  letter-spacing: 1px;
+}
+
+form button:hover {
+  background-color: #fdb4cf;
+}
+
+
+#produtos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: flex-start;
+  margin: 30px 0px;
+  min-height: 250px;
+}
+
+.produto {
+  width: calc(25% - 22.5px);
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.produto:hover {
+  transform: translateY(-5px);
+}
+
+.produto img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.produto p {
+  font-size: 14px;
+  text-align: center;
+  margin: 5px 0;
+}
+
+#titulo-categoria {
+  font-size: 35px;
+  color: #ca8ca4;
+  font-family: "Unica One", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+
+footer {
+  background-color: #fff0f0;
+  text-align: center;
+  padding: 10px 20px;
+  border-top: 1px solid #ffd5d5;
+  font-size: 14px;
+  color: #666;
+  width: 100%;
+}
+
+footer p {
+  margin: 5px 0;
+}

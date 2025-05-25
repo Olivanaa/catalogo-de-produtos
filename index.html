@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+    <header class="header">
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Produtos</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+  
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="titulo">CATÁLOGO DE PRODUTOS</h1>
+
+    <form class="filtros">
+      <label for="categoria">Categoria:</label>
+      <select id="categoria" name="categoria">
+        <option value="">Todas as Categorias</option>
+        <option value="Romance">Romance</option>
+        <option value="Suspense">Suspense</option>
+        <option value="Aventura">Aventura</option>
+        <option value="Tecnologia">Tecnologia</option>
+        <option value="Biografia">Biografia</option>
+      </select>
+
+      <label for="preco">Ordenar por:</label>
+      <select id="preco" name="preco">
+        <option value="">Selecione</option>
+        <option value="maior">Maior preço</option>
+        <option value="menor">Menor preço</option>
+      </select>
+
+      <label>
+        <input type="checkbox" name="disponibilidade" id="disponibilidade" />
+        Somente disponíveis
+      </label>
+      <button type="button" id="btn-filtrar">Filtrar</button>
+      <button type="button" id="btn-todos">Mostrar todos os produtos</button>
+    </form>
+
+    <section>
+      <p id="titulo-categoria"></p>
+      <div id="produtos-container"></div>
+      
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <p>Todos os direitos reservados © 2025</p>
+      <p>Desenvolvido com ❤️</p>
+    </div>
+  </footer>
+</body>
+<script src="./src/js/app.js"></script>
+</html>
