@@ -72,3 +72,76 @@ const produtos = [
         disponibilidade: false 
     },
 ]
+
+const botaoFiltrar = document.getElementById("btn-filtrar")
+const botaoTodos = document.getElementById("btn-todos")
+const preco = document.getElementById('preco')
+const categoria = document.getElementById('categoria')
+const produtosContainer = document.getElementById("produtos-container")
+const tituloCategoria = document.getElementById('titulo-categoria')
+
+function mostrarProdutos(produtos){
+    produtosContainer.innerHTML = ""
+    produtos.forEach(produto => {
+        produtosContainer.innerHTML +=  `
+            <div class="produto">
+                <img src="./src/assets/img/livro.png" alt="livro">
+                <p>Nome: ${produto.nome}</p>
+                <p>Preço: ${produto.preco.toFixed(2)}</p>
+                <p>Categoria:${produto.categoria}</p>
+                <p>Disponibilidade: ${produto.disponibilidade ? "Em estoque" : "Indisponível"}</p>
+            </div>
+        
+        `
+   })
+   const produto = document.querySelectorAll('.produto')
+   produto.forEach(prod =>{
+    prod.addEventListener('mouseover', function(){
+        prod.style.border = '1px solid #ca8ca4';
+    })
+    prod.addEventListener('mouseout', function(){
+        prod.style.border = 'none';
+    })
+   })
+}
+
+
+botaoFiltrar.addEventListener('click', function(){
+    const categoriaSelecionada = categoria.value
+    const disponibilidade = document.querySelector('#disponibilidade').checked
+    const precoSelecionado = preco.value
+
+    let filtrados = [...produtos];
+
+    if (categoriaSelecionada) {
+        filtrados = filtrados.filter(p => p.categoria === categoriaSelecionada);
+        tituloCategoria.innerHTML = `${categoriaSelecionada.toUpperCase()}`
+    }else{
+        tituloCategoria.innerHTML = ""
+    }
+
+    if (disponibilidade) {
+        filtrados = filtrados.filter(p => p.disponibilidade);
+    }
+
+    if(precoSelecionado == "maior") {
+        filtrados = filtrados.sort((a,b) => b.preco - a.preco)
+    }else if(precoSelecionado == "menor"){
+        filtrados = filtrados.sort((a,b) => a.preco - b.preco)
+    }
+
+    mostrarProdutos(filtrados)
+
+
+})
+
+botaoTodos.addEventListener('click', function(){
+    categoria.value = "";
+    preco.value = "";
+    document.querySelector('#disponibilidade').checked = false;
+    tituloCategoria.innerHTML = ""
+    mostrarProdutos(produtos)
+}
+)
+
+mostrarProdutos(produtos)
